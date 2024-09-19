@@ -1,107 +1,130 @@
-.dancing-script {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700; 
-    font-style: bold;
-    font-size: 40px;
-  }
-  * {
-    box-sizing: border-box;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
+  background-image: url('/public/assets/a.jpg');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  position: absolute;
+  z-index: -1;
+}
+
+.content {
+  width: 90%;
+  flex: 1;
+  max-width: 1200px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: rgb(224, 59, 59);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 82vh;
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  height: 100%;
+}
+
+.image {
+  display: block;
   
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.overlay-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%; 
+}
+
+.text-section {
+  background-color: aquamarine;
+  text-align: center;
+  flex: 1;
   
-  .container {
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .background {
-    background-image: url('/public/assets/a.jpg');
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px);
-    position: absolute;
-    z-index: -1;
-  }
-  
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.slick-dots {
+  bottom: 5px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+}
+
+@media (min-width: 768px) {
   .content {
-    width: 90%;
-    max-width: 1200px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
   }
-  
-  .image-section {
-    position: relative;
-    width: 100%;
+
+  .image-section, .text-section {
+    width: 50%;
   }
-  
-  .image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .text-section {
-    background-color: white;
-     background-color: aquamarine;
-    text-align: center;
-  }
-  
+
   .title {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    font-weight: 700;
-    background-color: aqua;
-    margin-bottom: 20px;
+    font-size: 3em;
   }
-  
- 
-  @media (min-width: 768px) {
-    .content {
-      flex-direction: row;
-    }
-  
-    .image-section, .text-section {
-      width: 50%;
-    }
-  
-    .title {
-      font-size: 3em;
-    }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4em;
   }
-  
-  @media (min-width: 1024px) {
-    .title {
-      font-size: 4em;
-    }
-  }
+}
